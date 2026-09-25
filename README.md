@@ -105,3 +105,39 @@ These visualizations provide insights into relationships among multiple variable
 <h2>Conclusion</h2>
 
 This project demonstrates a complete Exploratory Data Analysis (EDA) workflow using the Melbourne Housing Dataset. It includes data loading, preprocessing, statistical analysis, handling missing values, data cleaning, feature transformation, and various visualization techniques. The analysis helps in understanding property price distributions, relationships among housing attributes, and patterns within the Melbourne housing market. The project serves as a strong foundation for further predictive modeling and machine learning applications in real estate analytics.
+
+
+<h2>1D Statistical Analysis (Univariate)</h2>
+
+Descriptive Statistics: Calculated Mean, Median, Standard Deviation, Interquartile Range (IQR), Skewness, and Kurtosis.
+Distribution Diagnostics: Visualized price distributions and spread using Seaborn Histograms with Kernel Density Estimation (KDE) alongside Boxplots to detect skewness and anomalies.
+
+<h2>2D Statistical Analysis (Bivariate)</h2>
+
+Metrics: Computed Covariance and Pearson Correlation ($r$) between distance to CBD and market price.
+Correlation Matrix: Plotted a pairwise correlation heatmap across all numerical attributes.
+Linear Trend: Generated regression scatter plots (sns.regplot) evaluating price degradation as distance increases.
+
+<h2>3D Statistical Analysis (Trivariate)</h2>
+
+Spatial Interaction: Constructed a 3D scatter projection using mpl_toolkits.mplot3d.
+Feature Mapping: Explored the simultaneous interaction of Distance ($X$), Rooms ($Y$), and Price ($Z$) with a dynamic color gradient.
+
+<h2>K-Means Clustering</h2>
+
+<h3>Feature Standardization: Scaled numerical dimensions using StandardScaler to prevent feature dominance during Euclidean distance calculation.</h3>
+
+<h3>Optimal $k$ Estimation:</h3>
+Elbow Method: Measured within-cluster sum of squares (WCSS / Inertia).
+
+Silhouette Analysis: Evaluated cluster cohesion and separation across $k \in [2, 6]$.
+
+<h3>Segmentation: Partitioned properties into distinct market tiers ($k=3$) and visualized cluster boundaries on distance-price planes.</h3>
+
+
+<h2>Hierarchical (Agglomerative) Clustering</h2>
+
+Linkage Criterion: Applied Ward's minimum variance method (scipy.cluster.hierarchy.linkage) on standardized sub-samples.
+Dendrogram Visualization: Plotted hierarchical tree branches with a defined Euclidean cut threshold to isolate distinct housing clusters.
+Cluster Assignment: Extracted flat cluster assignments (fcluster) to validate against K-Means groupings.
+
